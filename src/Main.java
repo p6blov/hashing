@@ -1,7 +1,6 @@
 public class Main {
     public static void main(String[] args) {
         hashTable table = new hashTable();
-
         int[] nums = {10, 20, 15, 5, 25, 30};
         fillLinear(table, nums);
         table.print("Linear");

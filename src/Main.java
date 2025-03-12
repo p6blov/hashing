@@ -3,31 +3,12 @@ public class Main {
         System.out.println("Hello, World!");
     }
 }
-class hashNode<x, y> {
-    x key;
-    y value;
-    final int hashCode;
-
-    //reference to next node
-    hashNode<x, y> next;
-
-    //constructor
-    public hashNode(x key, y value, int hashCode)
-    {
-        this.key = key;
-        this.value = value;
-        this.hashCode = hashCode;
-    }
-}
-
-class Table<x, y> {
-    private int numBuckets;
+class hashTable {
     private int size;
-    private hashNode<x, y>[] buckets;
+    private int[] table;
 
-    public Table() {
-        buckets = new hashNode[10];
-        numBuckets = buckets.length;
+    public hashTable() {
+        table = new int[10];
         size = 0;
     }
 
@@ -35,12 +16,7 @@ class Table<x, y> {
 
     public boolean isEmpty() {return size == 0;}
 
-    private final int hashCode(x key) {return key.hashCode();}
+    private int hash1(int key) {return key % size;}
 
-    private int getBucketIndex(x key) {
-        int hash = hashCode(key);
-        int i = hash % numBuckets;
-        i = i < 0 ? i * -1 : i;
-        return i;
-    }
+    private int hash2(int key) {return key % (size - 1);}
 }

@@ -95,6 +95,6 @@ class hashTable {
                 out+= table[i];
             }
         }
-        System.out.println(out);
+        System.out.println(out + "\n\n-----------------------\n");
     }
 }
